@@ -1,0 +1,79 @@
+{
+    "address": "7CFLAA3YZTvtoi2bMgWegw5QbuoD5LS9kcekuumPbHKa",
+    "metadata": {
+      "name": "anchor_prescription",
+      "version": "0.1.0",
+      "spec": "0.1.0",
+      "description": "Created with Anchor"
+    },
+    "instructions": [
+      {
+        "name": "create_prescription",
+        "discriminator": [
+          159,
+          20,
+          247,
+          166,
+          112,
+          175,
+          21,
+          51
+        ],
+        "accounts": [
+          {
+            "name": "prescription",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "authority",
+            "writable": true,
+            "signer": true
+          },
+          {
+            "name": "system_program",
+            "address": "11111111111111111111111111111111"
+          }
+        ],
+        "args": [
+          {
+            "name": "data",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "accounts": [
+      {
+        "name": "Prescription",
+        "discriminator": [
+          43,
+          110,
+          88,
+          57,
+          223,
+          111,
+          195,
+          251
+        ]
+      }
+    ],
+    "types": [
+      {
+        "name": "Prescription",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "authority",
+              "type": "pubkey"
+            },
+            {
+              "name": "data",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    ]
+  }

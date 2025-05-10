@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("YourProgramIDHere");
+declare_id!("7CFLAA3YZTvtoi2bMgWegw5QbuoD5LS9kcekuumPbHKa");
 
 #[program]
 pub mod anchor_prescription {
