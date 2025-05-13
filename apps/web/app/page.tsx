@@ -1,30 +1,23 @@
-import Image, { type ImageProps } from "next/image";
-import program from '@anchor/program';
+"use client"
+
+import Footer from "@repo/ui/footer"
+import HeroSection from "@repo/ui/heroSection"
+import MedicalServices from "@repo/ui/medicalServices"
+import Navbar from "@repo/ui/navBar"
+import ServiceCards from "@repo/ui/serviceCard"
+import Specialties from "@repo/ui/specialties"
+import { useState } from "react"
 
 export default function Home() {
-
-  const createPrescription = async () => {
-    try {
-      if (program?.methods?.createPrescription) {
-        await program.methods
-          .createPrescription('Prescription Data')
-          .accounts({
-            // specify required accounts
-          })
-          .rpc();
-      } else {
-        throw new Error('Program methods or createPrescription is undefined');
-      }
-      console.log('Prescription created successfully');
-    } catch (error) {
-      console.error('Error creating prescription:', error);
-    }
-  };
-
-  return (
-    <div>
-      <h1>Create Prescription</h1>
-      <button onClick={createPrescription}>Create</button>
-    </div>
-  );
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className="h-screen w-screen bg-blue-500">
+            <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+            <HeroSection isOpen={isOpen} setIsOpen={setIsOpen} />
+            <MedicalServices />
+            <Specialties />
+            {/* <ServiceCards /> */}
+            <Footer />
+        </div>
+    )
 }
